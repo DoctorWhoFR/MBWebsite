@@ -79,8 +79,8 @@
                     <li class="dsn-active">
                         <a href="about.html">
 
-                            <span class="dsn-title-menu">About</span>
-                            <span class="dsn-meta-menu">04</span>
+                            <span class="dsn-title-menu">Informations</span>
+                            <span class="dsn-meta-menu">01</span>
                             <span class="dsn-bg-arrow"></span>
                         </a>
                     </li>
@@ -257,33 +257,10 @@
                                     <div class="wrapper-client">
                                         <div class="swiper-container w-100">
                                             <div class="swiper-wrapper">
-                                                <div class="swiper-slide logo-box dsn-up border-top">
-                                                    <div class="logo-box-inner">
-                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/img/logo/1.png" alt="">
-                                                    </div>
-                                                </div>
 
-                                                <div class="swiper-slide logo-box dsn-up border-top">
+                                                <div v-for="lang in languages" class="swiper-slide logo-box dsn-up border-top">
                                                     <div class="logo-box-inner">
-                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/img/logo/2.png" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="swiper-slide logo-box dsn-up border-top">
-                                                    <div class="logo-box-inner">
-                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/img/logo/3.png" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="swiper-slide logo-box dsn-up border-top">
-                                                    <div class="logo-box-inner">
-                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/img/logo/4.png" alt="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="swiper-slide logo-box dsn-up border-top">
-                                                    <div class="logo-box-inner">
-                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="assets/img/logo/1.png" alt="">
+                                                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" v-bind:data-dsn-src="'assets/languages/' + lang + '.png'" alt="">
                                                     </div>
                                                 </div>
 
