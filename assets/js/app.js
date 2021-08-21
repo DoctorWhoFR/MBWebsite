@@ -5,7 +5,8 @@ var app = new Vue({
     data: {
         message: 'Hello Vue !',
         github_data: null,
-        languages: []
+        languages: [],
+        projets: []
     },
 
     mounted: () => {
@@ -28,11 +29,16 @@ var app = new Vue({
 
 
             console.log(app.github_data[0]);
-
-
-            
+           
         });
+
         
+        _instance.get('spincorps/projets').then((response)=>{
+            app.projets = (response.data.data);
+
+            console.log(app.projets[0]);
+        })
+
         if(this.github_data) console.log("github loaded", this.github_data);
         
     }
