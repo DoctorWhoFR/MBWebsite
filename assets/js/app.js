@@ -9,11 +9,11 @@ var app = new Vue({
         projets: []
     },
 
-    mounted: () => {
+    beforeCreate: () => {
 
         _instance = axios.create({
             baseURL: 'https://qcorps.herokuapp.com/api/v1/',
-            timeout: 3000
+            timeout: 10000
         });
 
 
@@ -41,5 +41,26 @@ var app = new Vue({
 
         if(this.github_data) console.log("github loaded", this.github_data);
         
+    },
+
+    methods : {
+
+        sendContact(){
+            const _name = document.getElementById("form_name").value;
+            const _email = document.getElementById("form_email").value;
+            const _message = document.getElementById("form_message").value;
+
+            const btn = document.getElementById("contactbtn");
+            btn.value = "Envoyer !"
+
+            const _data = {name: _name, phone: "fez", email: _email, content: _message};
+
+            _instance.post("/spincorps/contacts", {data: _data}).then((response)=>{
+                console.log(response);
+            })
+
+        }
+    
+
     }
 })
